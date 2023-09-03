@@ -3,10 +3,10 @@ import "../../styles/ShoppingCart.css";
 import Header from "./Header";
 import ShoppingCartOverlay from "./ShoppingCartOverlay";
 import ProductList from "./ProductList";
-import { loadStripe } from '@stripe/stripe-js';
-import {Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
-const stripePromise = loadStripe('pk_test_51GqiCaF4DrgLkK0ui3cpz5Bab7LYUbFN45S39tPXElXyMTChptOSN5vBOw8sqazt9q0VpmxbZWKZPJkT0pV50G3A00r2BJ0UTA');
+const stripePromise = loadStripe("?????");
 
 const shoppingProducts = [
   {
@@ -72,9 +72,9 @@ function ShoppingCartApp() {
   return (
     <main id="main">
       <Elements stripe={stripePromise}>
-      <Header quantity={state.quantity} amountToPay={state.amountToPay} />
-      <ShoppingCartOverlay data={state} removeFromCart={removeFromCart} />
-      <ProductList itemsInCart={state.items} addToCart={addToCart} />
+        <Header quantity={state.quantity} amountToPay={state.amountToPay} />
+        <ShoppingCartOverlay data={state} removeFromCart={removeFromCart} />
+        <ProductList itemsInCart={state.items} addToCart={addToCart} />
       </Elements>
     </main>
   );
